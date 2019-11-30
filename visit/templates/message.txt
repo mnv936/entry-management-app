@@ -1,0 +1,8 @@
+Hey {{ host_name }}, you have a visitor:
+
+    Name: {{ visitor_name }}
+    Email: {{ visitor_email }}
+    Phone: {{ visitor_phone }}
+
+Please do not reply directly to this email.
+This is an automated message.

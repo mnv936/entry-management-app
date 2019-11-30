@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Check-In</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    .presentation {
+      display:flex;
+      width:90%;
+      margin:auto;
+      min-height:30vh;
+      align-items:center;
+      justify-content:center;
+      padding-top: 90px;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      display:flex;
+      width:70%;
+      height:10vh;
+      margin:auto;
+      align-items:center;
+    }
+    .logo-container {
+      flex:4;
+    }
+    .admin {
+      display: flex;
+      flex:1;
+      color:#E31C79;
+      justify-content:flex-end;
+
+    }
+    .admin-link {
+      color:#E31C79;
+      text-decoration: none;
+    }
+    input {
+      border: 2px solid #E31C79;
+      min-height: 30px;
+      min-width: 150px;
+      border-radius: 5px;
+      font-size:20px;
+      padding:5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="{% static 'logo.png' %}" alt="logo" height=50px />
+    </div>
+    <div class="admin">
+      <a class="admin-link" href="{% url 'admin:index' %}"><h2>ADMIN</h2></a>
+    </div>
+  </header>
+  <main>
+<section class="presentation">
+    <form action="{% url 'check_in_submit' %}" method="POST">
+      {% csrf_token %}
+<div class="visitor-host">
+      <div class="visitor">
+        <h2>Visitor :</h2>
+        <input type="text" placeholder="Name" name="visitor_name">
+        <br><br>
+
+        <input type="email" placeholder="Email" name="visitor_email">
+        <br><br>
+
+        <input type="number" placeholder="Phone Number" name="visitor_phone">
+        <br><br>
+        Check-in Date & Time:
+        <br>
+        <input type="datetime-local" name="checkin_date_time">
+        <br><br>
+      </div>
+
+      <div class="host">
+        <h2>Host :</h2>
+        <input type="text" placeholder="Name" name="host_name">
+        <br><br>
+
+        <input type="email" placeholder="Email" name="host_email">
+        <br><br>
+
+        <input type="number" placeholder="Phone Number" name="host_phone">
+      </div>
+</div>
+        <br><br>
+      <div class="submit_details">
+        <input type="submit">
+      </div>
+
+    </form>
+    <section>
+</main>
+</body>
+</html>

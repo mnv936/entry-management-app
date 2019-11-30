@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>innovaccer</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
+
+  <style media="screen">
+
+  .presentation {
+    display:flex;
+    width:70%;
+    margin:auto;
+    min-height:30vh;
+    align-items:center;
+    justify-content:center;
+    padding-top: 150px;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  header {
+    display:flex;
+    width:70%;
+    height:10vh;
+    margin:auto;
+    align-items:center;
+  }
+  .logo-container {
+    flex:4;
+  }
+  .admin {
+    display: flex;
+    flex:1;
+    color:#E31C79;
+    justify-content:flex-end;
+
+  }
+  .admin-link {
+    color:#E31C79;
+    text-decoration: none;
+  }
+
+  .check-in img, .check-out img {
+    height:30vh;
+    width:30vh;
+  }
+  .check-in {
+
+    margin:50px;
+  }
+  .check-out {
+
+    margin:50px;
+  }
+  .check-in h1, .check-out h1 {
+    font-size: 30px;
+    font-weight: 5000;
+    text-align: center;
+  }
+  .check-in img, .check-out img {
+    border:5px solid #E31C79;
+    border-radius: 10px;
+    padding:10px;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="{% static 'logo.png' %}" alt="logo" height=50px />
+    </div>
+    <div class="admin">
+      <a class="admin-link" href="{% url 'admin:index' %}"><h2>ADMIN</h2></a>
+    </div>
+  </header>
+  <main>
+    <section class="presentation">
+      <div class="check-in">
+        <h1>Check-in</h1>
+        <a href="{% url 'check_in' %}">
+          <image src="{% static 'checkin.png' %}" alt="Check-In">
+        </a>
+      </div>
+
+      <div class="check-out">
+        <h1>Check-out</h1>
+        <a href="{% url 'check_out' %}">
+          <image src="{% static 'checkout.png' %}" alt="Check-Out">
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

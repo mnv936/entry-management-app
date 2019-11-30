@@ -1,0 +1,20 @@
+Here is a summary of your visit:
+
+    Visitor:
+        Name: {{ visitor_name }}
+        Email: {{ visitor_email }}
+        Phone: {{ visitor_phone }}
+        Check-in time: {{ checkin_date_time }}
+        Check-out time: {{ checkout_date_time }}
+    Host:
+        Name: {{ host_name }}
+        Email: {{ host_email }}
+        Phone: {{ host_phone }}
+        Address Visited: 2nd and 9th Floor, Tower 3,
+                         Candor Techspace, Rajat Vihar, Block B,
+                         Industrial Area, Sector 62, Noida,
+                         Uttar Pradesh 201309
+
+
+Please do not reply directly to this email.
+This is an automated message.
