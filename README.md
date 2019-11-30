@@ -1,4 +1,5 @@
 # entry_management_app
+* This app is build using python/django on the backend and html/css(basic styling using flexbox) on the frontend.
 * This app is used to create entries of visitors.
 * It captures the Name, email address, phone no of the visitor and the host on the front end. 
 * At the back end, once the user enters the information in the form, the backend stores all of
