@@ -44,3 +44,33 @@ the information with time stamp of the entry and notifies the host about the vis
 * To view the database, first create a superuser by the following command 
   * `$ python3 manage.py createsuperuser`
 * Go to localhost:8000/admin to login and view the stored visitor objects.
+
+
+SMS notifications can also be supported. Steps to add SMS functionality:-
+
+### SMS Integration
+* To add sms notification functionality we will use the textlocal sms api(https://www.textlocal.in/free-developer-sms-api/)
+* Create a textlocal account and get the api key.
+* First add the following code to import the required libraries to visit/views.py file:
+```
+import urllib.request
+import urllib.parse 
+```
+* Add a the following function to visit/views.py file:
+```
+
+def sendSMS(apikey, numbers, sender, message):
+    data =  urllib.parse.urlencode({'apikey': apikey, 'numbers': numbers,
+        'message' : message, 'sender': sender})
+    data = data.encode('utf-8')
+    request = urllib.request.Request("https://api.textlocal.in/send/?")
+    f = urllib.request.urlopen(request, data)
+    fr = f.read()
+    return(fr)
+    
+```
+* Now call the function inside of 'check_in_submit' function just after 'send_mail' function is called:
+ ```
+ sendSMS('apikey', host_phone , 'TXTLCL', message)
+ ```
+* run the server to test.
